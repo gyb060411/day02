@@ -1,6 +1,7 @@
 package com.example.day02.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,23 +50,23 @@ public class HomeFragment extends Fragment implements MainContract.MainView {
     }
 
     @Override
-    public void onNext(BannerBean bannerBean) {
+    public void getBanner(BannerBean bannerBean) {
 
     }
 
     @Override
-    public void onNext(ProjectBean projectBean) {
+    public void getData(ProjectBean projectBean) {
         list.addAll(projectBean.getNews());
         adapter.notifyDataSetChanged();
     }
 
     @Override
-    public void onNext(ListBean listBean) {
+    public void getList(ListBean listBean) {
 
     }
 
     @Override
-    public void onError(String string) {
-
+    public void getResult(String result) {
+        Log.e("TAG", "onError: " + result);
     }
 }

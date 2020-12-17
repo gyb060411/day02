@@ -57,23 +57,23 @@ public class BlankFragment extends Fragment implements MainContract.MainView {
     }
 
     @Override
-    public void onNext(BannerBean bannerBean) {
+    public void getBanner(BannerBean bannerBean) {
 
     }
 
     @Override
-    public void onNext(ProjectBean projectBean) {
+    public void getData(ProjectBean projectBean) {
 
     }
 
     @Override
-    public void onNext(ListBean listBean) {
+    public void getList(ListBean listBean) {
         list.addAll(listBean.getStudenlist());
         adapter.notifyDataSetChanged();
     }
 
     @Override
-    public void onError(String string) {
-        Log.e("TAG", "onError: "+string );
+    public void getResult(String result) {
+        Log.e("TAG", "onError: " + result);
     }
 }

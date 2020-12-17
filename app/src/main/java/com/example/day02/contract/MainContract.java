@@ -3,26 +3,23 @@ package com.example.day02.contract;
 import com.example.day02.bean.BannerBean;
 import com.example.day02.bean.ListBean;
 import com.example.day02.bean.ProjectBean;
+import com.example.day02.util.net.INteCallBack;
 
 public class MainContract {
-    public interface MainView{
-        void onNext(BannerBean bannerBean);
-        void onNext(ProjectBean projectBean);
-        void onNext(ListBean listBean);
-        void onError(String string);
+    public interface MainView {
+        void getBanner(BannerBean bannerBean);
+        void getData(ProjectBean projectBean);
+        void getList(ListBean listBean);
+        void getResult(String result);
     }
-    public interface MainModel{
-        void mod(MainPersenter persenter);
-        void mod1(MainPersenter persenter);
-        void mod2(MainPersenter persenter);
+
+    public interface MainModel {
+        <T> void getMod(String url, INteCallBack<T> callBack);
     }
-    public interface MainPersenter{
+
+    public interface MainPersenter {
         void per();
         void per1();
         void per2();
-        void onNext(BannerBean bannerBean);
-        void onNext(ProjectBean projectBean);
-        void onNext(ListBean listBean);
-        void onError(String string);
     }
 }

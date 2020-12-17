@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity<IMainPersenterIpml> implements Ma
     }
 
     @Override
-    public void onNext(BannerBean bannerBean) {
+    public void getBanner(BannerBean bannerBean) {
         Log.e("TAG", "onNext: "+bannerBean.toString() );
         ArrayList<BannerBean.BannerlistBean> list=new ArrayList<>();
         list.addAll(bannerBean.getBannerlist());
@@ -93,17 +93,18 @@ public class MainActivity extends BaseActivity<IMainPersenterIpml> implements Ma
     }
 
     @Override
-    public void onNext(ProjectBean projectBean) {
+    public void getData(ProjectBean projectBean) {
 
     }
 
     @Override
-    public void onNext(ListBean listBean) {
+    public void getList(ListBean listBean) {
 
     }
 
     @Override
-    public void onError(String string) {
-        Log.e("TAG", "onError: " + string);
+    public void getResult(String result) {
+        Log.e("TAG", "onError: " + result);
     }
+
 }
